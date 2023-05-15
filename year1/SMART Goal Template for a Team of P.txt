@@ -1,0 +1,22 @@
+SMART Goal Template for a Team of Programming Beginners:
+
+Specific:
+By the end of the year, the team will be able to develop a basic web application using HTML, CSS, and JavaScript.
+
+Measurable:
+Each team member will be able to create a personal portfolio website that showcases their skills in web development.
+
+Achievable:
+The team will participate in a structured learning program that covers the necessary concepts and tools for web development. They will also have access to online resources and mentorship to support their learning.
+
+Relevant:
+Learning web development is relevant to the team's goals of building a strong foundation in programming and developing practical skills that can be applied in real-world projects.
+
+Time-bound:
+The team will complete their personal portfolio websites within six months, and the entire web application project will be completed within a year. Regular progress checks and milestones will be set along the way to ensure that the team is on track to meet their goals.
+
+
+
+
+
+
