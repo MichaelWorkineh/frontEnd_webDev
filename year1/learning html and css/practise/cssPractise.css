@@ -1,0 +1,56 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn{
+    background-color: red;
+    color: white;
+    padding: 10px;
+}
+#main-header{
+    background-color: rgb(23, 76, 119);
+    color: white;
+    padding: 30px;
+    margin: 0px;
+    text-align: right;
+}
+h2{
+    background-color:gray;
+    color: white;
+    padding: 10px;
+    margin: 0px;
+}
+table{
+    background-color:black;
+    color:gold;
+    position:relative;
+    padding: 20px;
+}
+.post h3{
+    background-color: rgb(50, 124, 221);
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    margin: 0px;
+}
+.post1{
+    background-color: lightgray;
+    color: rgb(144, 131, 160);
+    padding-top: 10px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;;
+    margin: 0px;
+}
+article{
+    margin: 30px;
+}
+ul{
+    text-align: center;
+}
+.poster{
+    text-align: right;
+    color: rgba(255, 250, 205, 0.514);
+}
+.m{
+    align-items: horizontal;
+}
