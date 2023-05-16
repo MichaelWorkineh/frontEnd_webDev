@@ -1,0 +1,95 @@
+@font-face {
+    font-family: "booter - zero zero";
+    src: url("fonts/Booter\ -\ Zero\ Zero.woff") format("woff"),
+         url("fonts/Booter\ -\ Zero\ Zero.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    box-sizing: border-box;
+    color: #777;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+.nav ul{
+    margin: 0;
+}
+.nav li{
+    display: inline;
+}
+.nav a{
+    display: inline-block;
+    padding: .5em;
+    color: rgba(255, 255,255, .5);
+    text-decoration: none;
+}
+.nav a:hover{
+    color: rgba(74, 123, 212, 1);
+    background-color: rgba(255, 255, 255, 0.178);
+}
+.main-nav{
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(255, 255,255, .5);
+}
+.main-nav li{
+    padding: 0 5%;
+}
+header{
+    background-color: rgba(0,0,0,0.6);
+    background-image: url("Album\ 1.png");
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+.band-name{
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    font-family: "Booter - Zero Zero";   
+    font-weight: normal;
+    color: white;
+}
+.large{
+    font-size: 9em;
+}
+.content-section{
+    margin: 1em;
+}
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+.section-header{
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+}
+.about-band-image{
+    float:left;
+    height: 200px;
+    margin: 15px;
+    border-radius: 100%;  
+}
+footer{
+    margin-top: 6rem;
+    background-color: black;
+    margin-bottom: 0;
+    padding-top:20px;
+    padding-bottom: 5px;
+}
+footer li{
+    display: inline; 
+    padding: 0 5%;  
+}
+.socals{
+    background-color: rgba(0,0,0,0.6);   
+}
+.socals:hover{
+    background-color: rgba(255,255,255,0.31);   
+}
