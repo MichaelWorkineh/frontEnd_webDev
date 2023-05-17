@@ -9,6 +9,16 @@ body{
     background-color: black;
 }
 
+#container{
+    position: absolute;
+    width: 2000px;
+    transform: translate(-50%,-1000%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: white;
+}
+
 #canvas1 {
     border: 3px solid white;
     position: absolute;
@@ -19,20 +29,13 @@ body{
     left: 50%;  
 }
 
-.controls{
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 3%;
+#slider{
+    width: 100%;
     color: white;
     font-size: 90px;
-    padding: 20px;
 }
 
-#animations{
-    border: 3px solid white;
-    font-size: 70px;
-}
-
-button{
-    font-size: 90;
+p{
+    width: 100%;
+    font-size: 90px;
 }
