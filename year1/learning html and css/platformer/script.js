@@ -33,4 +33,6 @@ function animate(){
     
     requestAnimationFrame(animate);
 };
+console.log("yey it works!!!")
 animate();
+
