@@ -1,15 +1,29 @@
-*{
+*{  
+    text-align: center;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 #canvas1 {
     position: absolute;
-    border: 5px solid black;
     width: 600px;
     height: 600px;
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
     
+}
+
+.controls{
+    position: absolute;
+    z-index: 10;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls, select, option{
+    font-size: 40px;
+
 }
