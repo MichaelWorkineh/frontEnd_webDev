@@ -3,20 +3,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
+
 body{
     background-color: black;
 }
+
 #canvas1 {
     border: 3px solid white;
     position: absolute;
-    width: 800px;
-    height: 700px;
+    width: 4800px;
+    height: 1440px;
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;  
 }
+
 .controls{
     margin-left: 25%;
     margin-right: 25%;
@@ -25,6 +27,12 @@ body{
     font-size: 90px;
     padding: 20px;
 }
+
 #animations{
+    border: 3px solid white;
     font-size: 70px;
+}
+
+button{
+    font-size: 90;
 }
