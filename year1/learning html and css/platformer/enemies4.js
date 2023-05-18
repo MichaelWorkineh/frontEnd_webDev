@@ -10,30 +10,37 @@ const enemyArayy = [];
 class Enemy{
     constructor (){
         this.image =  new Image();
-        this.image.src = 'resources/enemies/enemy3.png'
+        this.image.src = 'resources/enemies/enemy4.png'
         this.velocity=Math.random()*4+1;
-        this.spriteWidth = 218;
-        this.spriteHeight = 177;
+        this.spriteWidth = 213;
+        this.spriteHeight = 213;
         const sizer = Math.random()*3+2;
         this.width=this.spriteWidth/sizer;
         this.height=this.spriteHeight/sizer;
         this.x=Math.random()*(CANVAS_WIDTH-this.width);
         this.y=Math.random()*(CANVAS_HEIGHT-this.height);
+        this.newX=Math.random()*(CANVAS_WIDTH-this.width);
+        this.newY=Math.random()*(CANVAS_HEIGHT-this.height);
         this.flapRate=Math.floor(Math.random()*3+2);
         this.frame = 0;
         this.conuter = 0;
-        this.angle=0;
-        this.angleSpeed = Math.random() * 2+1.5;
-        this.xRange=Math.random()*200+50;
+        this.locationInteral = Math.floor(Math.random() * 200+50);
     }
 
     update(){
-        this.x =canvas.width/2*Math.cos(this.angle*Math.PI/180)+(canvas.width/2 - this.width/2);
-        this.y =canvas.height/2*Math.sin(this.angle*Math.PI/90)+(canvas.height/2 - this.height/2);
-        this.angle+=this.angleSpeed;
+        //this.x =0;
+        //this.y =0;
         if(this.x*this.width<0) this.x=CANVAS_WIDTH;
         this.conuter++;
         this.frame=(Math.floor(this.conuter/this.flapRate))%5;
+        if(this.conuter % this.locationInteral === 0){
+            this.newX=Math.random()*(CANVAS_WIDTH-this.width);
+            this.newY=Math.random()*(CANVAS_HEIGHT-this.height);
+        }
+        let dx=this.x-this.newX;
+        let dy=this.y-this.newY;
+        this.x-=dx/70;
+        this.y-=dy/70;
     }
 
     draw(){
