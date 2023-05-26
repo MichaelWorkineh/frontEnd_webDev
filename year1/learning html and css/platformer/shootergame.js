@@ -87,7 +87,7 @@ class Raven {
     constructor(){
         this.spriteWidth = 271;
         this.spriteHeight = 194;
-        this.crowSize=Math.random() * 3+1.5
+        this.crowSize=Math.random() * 3+1.5;
         this.width = this.spriteWidth/this.crowSize;
         this.height = this.spriteHeight/this.crowSize;
         this.x=canvas.width;
@@ -97,12 +97,12 @@ class Raven {
         this.markedForDeletion = false;
         this.image = new Image();
         this.image.src = "resources/enemies/raven.png";//6
-        this.frame=0
+        this.frame=0;
         this.counter=0;
         this.timeSinceFlap=0;
         this.flapInterval=Math.random() * 50 + 50;
         this.randomColors = [Math.floor(Math.random() * 255),Math.floor(Math.random() * 255),Math.floor(Math.random() * 255)];
-        this.color = 'rgb('+this.randomColors[0]+','+this.randomColors[1]+','+this.randomColors[2]+')'
+        this.color = 'rgb('+this.randomColors[0]+','+this.randomColors[1]+','+this.randomColors[2]+')';
     }
 
     update(deltaTime){
@@ -163,5 +163,4 @@ function animate(timestamp){
             endCard(value);
         }
 }
-//fghfghfgh
 animate(0);
