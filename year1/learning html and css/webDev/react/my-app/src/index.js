@@ -18,7 +18,7 @@ function Login() {
     if (
       details.email == registeredInfo.email &&
       details.name == registeredInfo.name &&
-      registeredInfo.password
+      details.password==registeredInfo.password
     ) {
       setUsername({
         name: details.name,
