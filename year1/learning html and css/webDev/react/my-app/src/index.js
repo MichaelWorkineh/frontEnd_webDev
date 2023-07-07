@@ -1,10 +1,40 @@
 import { type } from "@testing-library/user-event/dist/type";
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-//import Apps from "./App";
+import Testing from "./Testing";
 
 function Login() {
+  const registeredInfo = {
+    name: "Mark Fishback",
+    password: "blood shot eyes for my birthday",
+    email: "markipler@gmail.com",
+  };
+  const [user, setUsername] = useState({ name: "", password: "", email: "" });
+  const [error, setError] = useState("");
+
+  const login = (details) => {
+    console.log(details);
+    if (
+      details.email == registeredInfo.email &&
+      details.name == registeredInfo.name &&
+      registeredInfo.password
+    ) {
+      setUsername({
+        name: details.name,
+        email: details.email,
+      });
+    } else {
+      console.log("info does not match");
+      setError("info does not match");
+    }
+  };
+  const logout = () => {
+    setUsername({
+      name: "",
+      email: "",
+    });
+  };
   return (
     <>
       <div className="list">
@@ -15,21 +45,15 @@ function Login() {
           <li>contact us</li>
         </ul>
       </div>
-      <div className="loginCard">
-        <h1 className="greetings">wellcome!</h1>
-        <div className="user">
-          <input type="text" placeholder="user name"/>
-          <br></br>
-          <input type="password" placeholder="password"/>
-          <br></br>
-          <input type="email" placeholder="email"/>
+      {user.email != "" ? (
+        <div>'sup
+          <button onClick={logout}>logout</button>
         </div>
-        <button className="login">login</button>
-        <br></br>
-        <section className="forgotpassword">
-            <a href="www.goolge.com"> forgot your password?</a>
-          </section>
-      </div>
+        
+      ) : (
+        <Testing login={login} error={error} />
+        //<h1>h1!</h1>
+      )}
     </>
   );
 }
