@@ -1,68 +1,39 @@
+import { type } from "@testing-library/user-event/dist/type";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Apps from "./App";
-import Testing from "./Testing";
-/*
-function Hello() {
+import "./index.css";
+//import Apps from "./App";
+
+function Login() {
   return (
-    <div>
-      <h2>First component</h2>
-      <a href="www.google.com">weeewewee man</a>
-      <hr></hr>
-      <p>once I was a lonely kid with very weird kid dreams</p>
-    </div>
+    <>
+      <div className="list">
+        <ul>
+          <li>home</li>
+          <li>about us</li>
+          <li>news and update</li>
+          <li>contact us</li>
+        </ul>
+      </div>
+      <div className="loginCard">
+        <h1 className="greetings">wellcome!</h1>
+        <div className="user">
+          <input type="text" placeholder="user name"/>
+          <br></br>
+          <input type="password" placeholder="password"/>
+          <br></br>
+          <input type="email" placeholder="email"/>
+        </div>
+        <button className="login">login</button>
+        <br></br>
+        <section className="forgotpassword">
+            <a href="www.goolge.com"> forgot your password?</a>
+          </section>
+      </div>
+    </>
   );
-}*/
-
-function Hello() {
-  //return
-  <>
-    <h2>First component</h2>
-    <a href="www.google.com">weeewewee man</a>
-    <hr></hr>
-    <p>once I was a lonely kid with very weird kid dreams</p>
-  </>;
-  if (1 > 2) {
-    return React.createElement(
-      "React.Fragments",
-      {},
-      React.createElement("h3", {}, "hello world"),
-      React.createElement("p", {}, "iauhdawd asdaljdlksad laldjsakjdl"),
-      React.createElement(
-        "ol",
-        {},
-        React.createElement(
-          "li",
-          {},
-          React.createElement(
-            "p",
-            {},
-            "iauhdawd asdaljdlksad laldjsakjdl. usiauidaushasd aidoadioasdoasijdlkasd asidipaosdipaosdpoasdoasdla;s aisdaiduoaiduoiaduasido aspdoapsidopasidpoasdipaosdk;alsd asdasdiasoduioasduuaysduiasdyiuasd asdasioduaosiduoiasdia"
-          )
-        ),
-        React.createElement("li", {}, "iauhdawd asdaljdlksad laldjsakjdl"),
-        React.createElement("li", {}, "iauhdawd asdaljdlksad laldjsakjdl")
-      )
-    );
-  } else {
-    return React.createElement(
-      "div",
-      {},
-      React.createElement("h1", {}, "FUCK ME!"),
-      React.createElement("hr", {}),
-      React.createElement(
-        "p",
-        {},
-        "cause I wanna kill my self! like it is nobody's bussiness"
-      ),
-      React.createElement("hr", {}),
-      <Testing />,
-      <Apps />
-    );
-  }
 }
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //export default Hello;
-root.render(<Hello />);
+root.render(<Login />);
