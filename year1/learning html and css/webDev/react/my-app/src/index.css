@@ -1,19 +1,18 @@
 body {
-  background: linear-gradient(
-    rgb(31, 37, 63),
-    rgb(67, 95, 112),
-    rgb(67, 95, 112),
-    rgb(245, 151, 63)
-  );
+  background-image: url("image1.jpg");
+  background-size: cover;
+  height: 96vh;
+}
+.loginForm{
+  display: flex;
   justify-content: center;
-  height: 98vh;
   align-items: center;
 }
 .list li {
   display: inline;
   padding-left: 7%;
   padding-right: 7%;
-  color: rgba(240, 248, 255, 0.596);
+  color: rgba(0, 0, 0, 0.596);
   font-size: 100%;
 }
 .list li:hover {
@@ -36,23 +35,28 @@ input {
 }
 .greetings {
   color: aliceblue;
-  font-size: 100px;
+  font-size: 4em;
   text-align: center;
 }
 .user {
+  padding-top: 20px;
   font-size: 35px;
   text-align: center;
   padding-bottom: 10px;
 }
 
 .loginCard {
+  margin-top: 6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.597);
+  background-color: rgba(14, 14, 14, 0.788);
   width: fit-content;
   height: fit-content;
-  font-size: 35px;
   padding-top: 2%;
-  padding-bottom: 1%;
+  padding-bottom: 3%;
   padding-left: 2%;
   padding-right: 2%;
   text-align: center;
@@ -63,7 +67,7 @@ input {
   text-align: center;
   padding-left: 50px;
   padding-right: 50px;
-  font-size: 35px;
+  font-size: 25px;
   background-color: rgb(236, 121, 44);
   color: white;
   position: relative;
@@ -74,7 +78,6 @@ input {
 .login:hover {
   padding-left: 50px;
   padding-right: 50px;
-  font-size: 35px;
   background-color: rgb(91, 194, 172);
   color: white;
 }
@@ -85,4 +88,17 @@ input:hover {
 
 input:focus {
   outline-color: rgba(245, 222, 179, 0);
+}
+
+.error {
+  font-size: 50%;
+  color: rgb(248, 0, 0);
+  background-color: rgba(255, 0, 0, 0.288);
+  width: 300px;
+  height: fit-content;
+  padding: 2%;
+}
+.horizontalLine{
+  margin-top: -20px;
+  width: 19.7em;
 }

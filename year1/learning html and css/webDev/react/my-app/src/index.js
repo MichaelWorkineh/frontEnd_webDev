@@ -18,7 +18,7 @@ function Login() {
     if (
       details.email == registeredInfo.email &&
       details.name == registeredInfo.name &&
-      details.password==registeredInfo.password
+      details.password == registeredInfo.password
     ) {
       setUsername({
         name: details.name,
@@ -37,22 +37,13 @@ function Login() {
   };
   return (
     <>
-      <div className="list">
-        <ul>
-          <li>home</li>
-          <li>about us</li>
-          <li>news and update</li>
-          <li>contact us</li>
-        </ul>
-      </div>
       {user.email != "" ? (
-        <div>'sup
+        <div>
+          'sup
           <button onClick={logout}>logout</button>
         </div>
-        
       ) : (
         <Testing login={login} error={error} />
-        //<h1>h1!</h1>
       )}
     </>
   );
