@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Testing from "./Testing";
+import Register from "./register";
 
 //--------------------------------------------------
 function Login() {
-  const [peopleData, setPeopleData] = useState([null]);
+  let [peopleData, setPeopleData] = useState([null]);
   useEffect(() => {
     fetch("http://localhost:8000/users")
       .then((res) => {
@@ -33,6 +34,23 @@ function Login() {
     id: "",
   });
   const [error, setError] = useState("");
+  const [newInfo, setnewInfo] = useState({
+    name: "",
+    password: "",
+    email: "",
+    sex: "",
+    country: "",
+    id: "",
+  }); 
+
+  const registrationFunc = (registrationDetails) =>{
+    console.log("from registrationFunc,");
+    console.log(registrationDetails);
+    peopleData = [...peopleData,registrationDetails];
+    console.log("the updated json array:");
+    console.log(peopleData);
+    setnewInfo(registrationDetails);
+  };
 
   const login = (details) => {
     console.log(details);
@@ -52,9 +70,9 @@ function Login() {
           id: peopleData[i].id,
         });
       } else {
-      console.log("info does not match");
-      setError("*! info does not match !*");
-    }
+        console.log("info does not match");
+        setError("*! info does not match !*");
+      }
     }
   };
   const logout = () => {
@@ -64,6 +82,7 @@ function Login() {
     });
   };
   return (
+    /*
     <>
       {user.email != "" ? (
         <div className="ProfilePage">
@@ -90,7 +109,10 @@ function Login() {
           <Testing login={login} error={error} />
         </div>
       )}
-    </>
+    </>*/<>
+    {newInfo.email == ""? (
+    <Register registrationFunc={registrationFunc} />):(<h1>Youe ahve been registered!</h1>)};
+  </>
   );
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
