@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -7,7 +6,7 @@ import Register from "./register";
 
 //--------------------------------------------------
 function Login() {
-  let [peopleData, setPeopleData] = useState([null]);
+  const [peopleData, setPeopleData] = useState([null]);
   useEffect(() => {
     fetch("http://localhost:8000/users")
       .then((res) => {
@@ -19,7 +18,16 @@ function Login() {
       });
   }, []);
   //-----------------------------------------------------
-
+  const [pageState, setPageState] = useState(0);
+  const clickHandler=()=>{
+    if(pageState==0){
+      setPageState(1);
+    }
+    else{
+      setPageState(0);
+    }
+    console.log(pageState);
+  }
   const registeredInfo = {
     name: "Mark Fishback",
     password: "blood shot eyes for my birthday",
@@ -41,20 +49,24 @@ function Login() {
     sex: "",
     country: "",
     id: "",
-  }); 
+  });
 
-  const registrationFunc = (registrationDetails) =>{
+  const registrationFunc = (registrationDetails) => {
     console.log("from registrationFunc,");
     console.log(registrationDetails);
-    peopleData = [...peopleData,registrationDetails];
+    if(registrationDetails.email!=""){
+    const updatedArray = [...peopleData, registrationDetails];
+    setPeopleData(updatedArray); 
     console.log("the updated json array:");
     console.log(peopleData);
-    setnewInfo(registrationDetails);
+    setnewInfo(registrationDetails);}
+    console.log(peopleData.length);
   };
 
   const login = (details) => {
     console.log(details);
-    for (let i = 0; i < 7; i++) {
+    console.log(peopleData)
+    for (let i = 0; i < peopleData.length; i++) {
       if (
         peopleData[i] &&
         details.email == peopleData[i].email &&
@@ -82,37 +94,60 @@ function Login() {
     });
   };
   return (
-    /*
     <>
-      {user.email != "" ? (
-        <div className="ProfilePage">
-          <div className="profilelogout">
-            <h1 className="profile">
-              {user.name[0]}
-              {user.name[1]}
-            </h1>
-            <button onClick={logout} className="login">
-              logout
-            </button>
-          </div>
-          <div className="details">
-            <section>Name: {user.name}</section>
-            <section>email: {user.email}</section>
-            <section>sex: {user.sex}</section>
-            <section>age: {user.age}</section>
-            <section>id: {user.id}</section>
-            <section>country: {user.country}</section>
-          </div>
-        </div>
+      {pageState == 0 ? (
+        <>
+          {user.email != "" ? (
+            <div className="ProfilePage">
+              <div className="profilelogout">
+                <h1 className="profile">
+                  {user.name[0]}
+                  {user.name[1]}
+                </h1>
+                <button onClick={logout} className="login">
+                  logout
+                </button>
+              </div>
+              <div className="details">
+                <section>Name: {user.name}</section>
+                <section>email: {user.email}</section>
+                <section>sex: {user.sex}</section>
+                <section>age: {user.age}</section>
+                <section>id: {user.id}</section>
+                <section>country: {user.country}</section>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <Testing login={login} error={error} />
+              <button className="login" onClick={clickHandler}>
+                  Register
+                </button>
+            </div>
+          )}
+        </>
       ) : (
-        <div>
-          <Testing login={login} error={error} />
-        </div>
+        <>
+          {newInfo.email == "" ? (
+            <>
+              <Register registrationFunc={registrationFunc} />
+              <button className="login" onClick={clickHandler}>
+                back
+              </button>
+            </>
+          ) : (
+            <>
+              <h1>You have been registered!</h1>
+              <button className="login" onClick={clickHandler}>
+                back
+              </button>
+            </>
+          )}
+          ;
+        </>
       )}
-    </>*/<>
-    {newInfo.email == ""? (
-    <Register registrationFunc={registrationFunc} />):(<h1>Youe ahve been registered!</h1>)};
-  </>
+      ;
+    </>
   );
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));

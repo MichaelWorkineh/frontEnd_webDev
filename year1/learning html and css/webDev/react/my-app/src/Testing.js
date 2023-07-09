@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-function Testing({ login, error }) {
+function Testing({ login, error}) {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
   const submitHandler = (e) => {
     e.preventDefault();
@@ -36,7 +36,6 @@ function Testing({ login, error }) {
           />
         </div>
         <input className="login" type="submit" value="LOGIN" />
-
 
         <section className="forgotpassword">
           <a href="www.goolge.com"> forgot your password?</a>
