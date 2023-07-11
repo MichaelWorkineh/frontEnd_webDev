@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-function Registerer({ registrationFunc }) {
+function Registerer({ registrationFunc, clickHandler }) {
   const [registrationDetails, setDetails] = useState({
     id: "",
     name: "",
@@ -13,81 +13,104 @@ function Registerer({ registrationFunc }) {
     e.preventDefault();
     registrationFunc(registrationDetails);
   };
-  return (
-    <form onSubmit={submitHandler}>
-      <h1>register</h1>
-      <section>name:</section>
-      <input
-        type="text"
-        className="fullname"
-        placeholder="full name"
-        onChange={(e) =>
-          setDetails({ ...registrationDetails, name: e.target.value })
-        }
-        value={registrationDetails.name}
-      ></input>
-      <section>email:</section>
-      <input
-        type="text"
-        className="email"
-        placeholder="email"
-        onChange={(e) =>
-          setDetails({ ...registrationDetails, email: e.target.value })
-        }
-        value={registrationDetails.email}
-      ></input>
-      <section>ID:</section>
-      <input
-        type="text"
-        className="id"
-        placeholder="ID"
-        onChange={(e) =>
-          setDetails({ ...registrationDetails, id: e.target.value })
-        }
-        value={registrationDetails.id}
-      ></input>
-      <section>age: </section>
-      <input
-        type="number"
-        className="age"
-        placeholder="age"
-        onChange={(e) =>
-          setDetails({ ...registrationDetails, age: e.target.value })
-        }
-        value={registrationDetails.age}
-      ></input>
-      <section>sex: </section>
-      <input
-        type="text"
-        className="sex"
-        placeholder="sex"
-        onChange={(e) =>
-          setDetails({ ...registrationDetails, sex: e.target.value })
-        }
-        value={registrationDetails.sex}
-      ></input>
-      <section>password:</section>
-      <input
-        type="text"
-        className="password"
-        placeholder="password"
-        onChange={(e) =>
-          setDetails({ ...registrationDetails, password: e.target.value })
-        }
-        value={registrationDetails.password}
-      ></input>
-      <section>country:</section>
-      <input
-        type="text"
-        className="country"
-        placeholder="country"
-        onChange={(e) =>
-          setDetails({ ...registrationDetails, country: e.target.value })
-        }
-        value={registrationDetails.country}
-      ></input>
-      <input className="login" type="submit" value="submit" />
+  const clicked = () => {
+    clickHandler();
+  };
+  return (<div className="registrationScreen">
+    <form onSubmit={submitHandler} className="RegisterationForm">
+      <section className="title"><h1>Register</h1><button className="back" onClick={clickHandler}>
+          back
+        </button>
+        </section>
+      <section className="inputRow">
+        <text>name:</text>
+        <input
+          type="text"
+          className="input"
+          placeholder="full name"
+          onChange={(e) =>
+            setDetails({ ...registrationDetails, name: e.target.value })
+          }
+          value={registrationDetails.name}
+        ></input>
+      </section>
+      <section className="inputRow">
+        <text>email:</text>
+        <input
+          type="text"
+          className="input"
+          placeholder="email"
+          onChange={(e) =>
+            setDetails({ ...registrationDetails, email: e.target.value })
+          }
+          value={registrationDetails.email}
+        ></input>
+      </section>
+      <section className="inputRow">
+        <text>ID:</text>
+        <input
+          type="text"
+          className="input"
+          placeholder="ID"
+          onChange={(e) =>
+            setDetails({ ...registrationDetails, id: e.target.value })
+          }
+          value={registrationDetails.id}
+        ></input>
+      </section>
+      <section className="inputRow">
+        <text>age:</text>
+        <input
+          type="number"
+          className="input"
+          placeholder="age"
+          onChange={(e) =>
+            setDetails({ ...registrationDetails, age: e.target.value })
+          }
+          value={registrationDetails.age}
+        ></input>
+      </section>
+      <section className="inputRow">
+        <text>sex:</text>
+        <input
+          type="text"
+          className="input"
+          placeholder="sex"
+          onChange={(e) =>
+            setDetails({ ...registrationDetails, sex: e.target.value })
+          }
+          value={registrationDetails.sex}
+        ></input>
+      </section>
+      <section className="inputRow">
+        <text>password:</text>
+        <input
+          type="text"
+          className="input"
+          placeholder="password"
+          onChange={(e) =>
+            setDetails({ ...registrationDetails, password: e.target.value })
+          }
+          value={registrationDetails.password}
+        ></input>
+      </section>
+      <section className="inputRow">
+        <text>country:</text>
+        <input
+          type="text"
+          className="input"
+          placeholder="country"
+          onChange={(e) =>
+            setDetails({ ...registrationDetails, country: e.target.value })
+          }
+          value={registrationDetails.country}
+        ></input>
+      </section>
+      <section className="submitionRow">
+        <input className="submitButton" type="submit" value="submit" />
+      </section>
     </form>
+    </div>
   );
 }
 

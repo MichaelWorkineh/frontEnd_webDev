@@ -19,15 +19,14 @@ function Login() {
   }, []);
   //-----------------------------------------------------
   const [pageState, setPageState] = useState(0);
-  const clickHandler=()=>{
-    if(pageState==0){
+  const clickHandler = () => {
+    if (pageState == 0) {
       setPageState(1);
-    }
-    else{
+    } else {
       setPageState(0);
     }
     console.log(pageState);
-  }
+  };
   const registeredInfo = {
     name: "Mark Fishback",
     password: "blood shot eyes for my birthday",
@@ -54,18 +53,19 @@ function Login() {
   const registrationFunc = (registrationDetails) => {
     console.log("from registrationFunc,");
     console.log(registrationDetails);
-    if(registrationDetails.email!=""){
-    const updatedArray = [...peopleData, registrationDetails];
-    setPeopleData(updatedArray); 
-    console.log("the updated json array:");
-    console.log(peopleData);
-    setnewInfo(registrationDetails);}
+    if (registrationDetails.email != "") {
+      const updatedArray = [...peopleData, registrationDetails];
+      setPeopleData(updatedArray);
+      console.log("the updated json array:");
+      console.log(peopleData);
+      setnewInfo(registrationDetails);
+    }
     console.log(peopleData.length);
   };
 
   const login = (details) => {
     console.log(details);
-    console.log(peopleData)
+    console.log(peopleData);
     for (let i = 0; i < peopleData.length; i++) {
       if (
         peopleData[i] &&
@@ -93,20 +93,30 @@ function Login() {
       email: "",
     });
   };
+
+  const clearRegister = () => {
+    setnewInfo({
+      name: "",
+      password: "",
+      email: "",
+      sex: "",
+      country: "",
+      id: "",
+    });
+
+    setPageState(0);
+  };
   return (
     <>
       {pageState == 0 ? (
         <>
-          {user.email != "" ? (
+          {user.email != "" ? (<section className = "profilePageScreen">
             <div className="ProfilePage">
               <div className="profilelogout">
                 <h1 className="profile">
                   {user.name[0]}
                   {user.name[1]}
                 </h1>
-                <button onClick={logout} className="login">
-                  logout
-                </button>
               </div>
               <div className="details">
                 <section>Name: {user.name}</section>
@@ -116,13 +126,14 @@ function Login() {
                 <section>id: {user.id}</section>
                 <section>country: {user.country}</section>
               </div>
+              <button onClick={logout} className="logout">
+                  logout
+                </button>
             </div>
+            </section>
           ) : (
             <div>
-              <Testing login={login} error={error} />
-              <button className="login" onClick={clickHandler}>
-                  Register
-                </button>
+              <Testing login={login} error={error} clickHandler={clickHandler}/>
             </div>
           )}
         </>
@@ -130,15 +141,16 @@ function Login() {
         <>
           {newInfo.email == "" ? (
             <>
-              <Register registrationFunc={registrationFunc} />
-              <button className="login" onClick={clickHandler}>
-                back
-              </button>
+              <Register
+                registrationFunc={registrationFunc}
+                clickHandler={clickHandler}
+                className="registrationScreen"
+              />
             </>
           ) : (
             <>
               <h1>You have been registered!</h1>
-              <button className="login" onClick={clickHandler}>
+              <button className="login" onClick={clearRegister}>
                 back
               </button>
             </>

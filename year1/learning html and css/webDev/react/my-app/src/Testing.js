@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-function Testing({ login, error}) {
+function Testing({ login, error,clickHandler}) {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
   const submitHandler = (e) => {
     e.preventDefault();
     login(details);
   };
+  const clicked = () =>{
+    clickHandler ();
+  }
   return (
     <form onSubmit={submitHandler} className ="loginForm">
+      <button className="registerButton" onClick={clicked}>
+                Register
+              </button>
       <div className="loginCard">
         <h1 className="greetings">Login</h1>
         <hr className="horizontalLine"></hr>
@@ -15,6 +21,7 @@ function Testing({ login, error}) {
           <input
             type="text"
             placeholder="user name"
+            className="input"
             onChange={(e) => setDetails({ ...details, name: e.target.value })}
             value={details.name}
           />
@@ -22,6 +29,7 @@ function Testing({ login, error}) {
           <input
             type="password"
             placeholder="password"
+            className="input"
             onChange={(e) =>
               setDetails({ ...details, password: e.target.value })
             }
@@ -31,15 +39,13 @@ function Testing({ login, error}) {
           <input
             type="email"
             placeholder="email"
+            className="input"
             onChange={(e) => setDetails({ ...details, email: e.target.value })}
             value={details.email}
           />
         </div>
         <input className="login" type="submit" value="LOGIN" />
 
-        <section className="forgotpassword">
-          <a href="www.goolge.com"> forgot your password?</a>
-        </section>
       </div>
     </form>
   );
