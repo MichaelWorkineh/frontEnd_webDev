@@ -110,30 +110,35 @@ function Login() {
     <>
       {pageState == 0 ? (
         <>
-          {user.email != "" ? (<section className = "profilePageScreen">
-            <div className="ProfilePage">
-              <div className="profilelogout">
-                <h1 className="profile">
-                  {user.name[0]}
-                  {user.name[1]}
-                </h1>
-              </div>
-              <div className="details">
-                <section>Name: {user.name}</section>
-                <section>email: {user.email}</section>
-                <section>sex: {user.sex}</section>
-                <section>age: {user.age}</section>
-                <section>id: {user.id}</section>
-                <section>country: {user.country}</section>
-              </div>
-              <button onClick={logout} className="logout">
+          {user.email != "" ? (
+            <section className="profilePageScreen">
+              <div className="ProfilePage">
+                <div className="profilelogout">
+                  <h1 className="profile">
+                    {user.name[0]}
+                    {user.name[1]}
+                  </h1>
+                </div>
+                <div className="details">
+                  <section>Name: {user.name}</section>
+                  <section>email: {user.email}</section>
+                  <section>sex: {user.sex}</section>
+                  <section>age: {user.age}</section>
+                  <section>id: {user.id}</section>
+                  <section>country: {user.country}</section>
+                </div>
+                <button onClick={logout} className="logout">
                   logout
                 </button>
-            </div>
+              </div>
             </section>
           ) : (
             <div>
-              <Testing login={login} error={error} clickHandler={clickHandler}/>
+              <Testing
+                login={login}
+                error={error}
+                clickHandler={clickHandler}
+              />
             </div>
           )}
         </>
@@ -149,10 +154,16 @@ function Login() {
             </>
           ) : (
             <>
-              <h1>You have been registered!</h1>
-              <button className="login" onClick={clearRegister}>
-                back
-              </button>
+              <section className="confirmationScreen">
+                <section className="confirmaionCard">
+                  <h1>Confirmed!</h1>
+                  <hr></hr>
+                  <p>You have been successfuly registered.</p>
+                  <button className="login" onClick={clearRegister}>
+                    back
+                  </button>
+                </section>
+              </section>
             </>
           )}
           ;

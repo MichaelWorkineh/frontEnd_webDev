@@ -268,3 +268,41 @@ text {
 .RegisterationForm .input {
   height: 1.2em;
 }
+
+.confirmaionCard{
+  margin-top: 6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-color: rgba(14, 14, 14, 0.788);
+  width: fit-content;
+  height: fit-content;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  padding-left: 4%;
+  padding-right: 4%;
+  text-align: center;
+  border-radius: 4%;
+  color: aliceblue;
+}
+
+.confirmaionCard h1{
+  font-size: 4em;    
+}
+
+.confirmaionCard p{
+  font-size: 1.2em;
+}
+
+.confirmaionCard hr{
+  margin-top: -1em;
+  width: 18.5em; 
+}
+
+.confirmationScreen{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
