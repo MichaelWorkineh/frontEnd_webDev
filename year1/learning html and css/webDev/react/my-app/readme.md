@@ -4,10 +4,10 @@
 1. About the project
 2. Functionality
 3. File explanation
-   - React Login Component Documentation
-   - React Registerer Component Documentation
-   - React Testing Component Documentation
-   - Express Server Documentation
+4. React Login Component Documentation
+5. React Registerer Component Documentation
+6. React Testing Component Documentation
+7. Express Server Documentation
 
 ## About the project
 this project was intended for pracatisng the fundamental concepts of react. It was developed in 5 days as a means of practising react. It will be revisited as after a while to increase its efficency and clarity. It was successful in challenging: my understanding, designing abilities as well as delivering a product with in a deadline 
@@ -17,6 +17,15 @@ This project has the following functionality:
 - has a login page where pre registered user can logi with
 - has a registration page that allows new users to be registered (it actualy changes the json file for them to login after wards)
 - has a profile page that shows a users full name, age, sex, email, country and id
+
+## How to run the file
+1. enter `node server.js` command on a terminal
+2. enter `npx json-server --watch UserData.json --port 9000` command on a different terminal
+3. enter `npm start` command on another terminal.
+
+Note:
+- in total there should be three different terminals running one of these commands
+- MAKE SURE THAT YOUR FIFLE DIRECTORY IS INSIDE 'src'
 
 ## React Login Component Documentation
 This section provides an overview of the React login component code and its functionalities.
