@@ -170,18 +170,16 @@ input:focus {
 }
 
 .back {
-  margin-left: 17em;
+  margin-left: 10em;
   text-align: center;
-
-  font-size: 15px;
-  width: 2.7em;
-  height: 2.7em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 25px;
   background-color: rgb(236, 121, 44);
   color: white;
   position: relative;
   border: none;
-  border-radius: 2em;
-}
+  border-radius: 0.35em;}
 
 .back:hover {
   background-color: rgb(91, 194, 172);
@@ -195,6 +193,7 @@ input:focus {
 }
 
 .title {
+  margin-top: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,8 +251,6 @@ text {
   align-items: center;
 }
 .submitButton {
-  margin-left: 35%;
-  margin-top: 5%;
   text-align: center;
   padding-left: 1em;
   padding-right: 1em;
@@ -305,4 +302,21 @@ text {
   display: flex;
   justify-content: center;
   align-items: center; 
+}
+
+.registerationError{
+  font-size: 95%;
+  color: rgb(248, 0, 0);
+  background-color: rgba(255, 0, 0, 0.288);
+  text-align: center;
+  height: fit-content;
+  padding: 2%;
+}
+.inputBox{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.colomn2{
+  padding-left: 2em;
 }

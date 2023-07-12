@@ -13,13 +13,13 @@ const dataFilePath = 'UserData.json';
 let data = JSON.parse(fs.readFileSync(dataFilePath));
 
 app.post('/modify', (req, res) => {
-  const { newMessage } = req.body;
+  const { newPeopleData } = req.body; // Assuming the request body contains a "newPeopleData" field
 
   // Modify the data object
-  data.message = newMessage;
+  data.users = newPeopleData;
 
   // Write the modified data back to the JSON file
-  fs.writeFileSync(dataFilePath, JSON.stringify(data));
+  fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2)); // null, 2 for pretty formatting
 
   res.json({ success: true });
 });

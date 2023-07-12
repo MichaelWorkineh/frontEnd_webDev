@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 function Testing({ login, error,clickHandler}) {
-  const [details, setDetails] = useState({ name: "", email: "", password: "" });
+  const [details, setDetails] = useState({ fullName: "", email: "", password: "" });
   const submitHandler = (e) => {
     e.preventDefault();
     login(details);
@@ -22,8 +22,8 @@ function Testing({ login, error,clickHandler}) {
             type="text"
             placeholder="user name"
             className="input"
-            onChange={(e) => setDetails({ ...details, name: e.target.value })}
-            value={details.name}
+            onChange={(e) => setDetails({ ...details, fullName: e.target.value })}
+            value={details.fullName}
           />
           <br></br>
           <input
